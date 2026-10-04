@@ -1,0 +1,12 @@
+# DSH Auto-Update language file: English (source).
+#
+# English needs NO entries: the English sentence in the code IS the key and
+# falls through unchanged. This file only exists so translators have a
+# template to copy. See zh-CN.txt for the expected format:
+#
+#   exact|English sentence|Translated sentence     -> replaces a whole line
+#   sub|English fragment|Translated fragment       -> replaces inside any line
+#
+# Runs of spaces match any whitespace, so padded labels like
+# "npm         : " can be written as "sub|npm : |...".
+# Anything not listed stays English.

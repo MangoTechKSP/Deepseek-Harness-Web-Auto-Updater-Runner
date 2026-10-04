@@ -1,0 +1,232 @@
+# DSH Auto-Update 简体中文语言包
+# 格式： exact|英文原文|中文译文   （整行匹配）
+#        sub|英文片段|中文片段     （行内替换）
+# 英文原文即键；没列出的句子保持英文原样。空格连写表示"匹配任意空白"。
+
+# ---------------- settings.bat 主菜单 ----------------
+exact|DSH Auto-Update - settings|DSH 自动更新 - 设置
+exact|Current:|当前：
+exact|Choice:|请选择：
+exact|Language|语言
+exact|Web port|网页端口
+exact|DSH profile|DSH 配置文件（profile）
+exact|Update channel|更新通道
+exact|Open the browser on a manual start|手动启动时自动打开浏览器
+exact|Ask before an update is installed|安装更新前先询问
+exact|Boot task: check for updates at logon|开机任务：登录时检查更新
+exact|Auto-backup task (every 15 min)|自动备份任务（每 15 分钟）
+exact|Check for updates now|立即检查更新
+exact|Back up the plugins now|立即备份插件
+exact|List backups and restore|查看备份并恢复
+exact|Show status|查看状态
+exact|Install or repair DSH in this folder|在本文件夹安装/修复 DSH
+exact|Remove both scheduled tasks|删除两个计划任务
+exact|Register both scheduled tasks|注册两个计划任务
+exact|Checking prerequisites|检查运行环境
+exact|Preparing the DSH install folder|准备 DSH 安装目录
+exact|Installing DSH|正在安装 DSH
+exact|Verifying the install|正在校验安装
+exact|Registering the scheduled tasks|正在注册计划任务
+exact|retrying through the updater|改用更新器重试
+exact|Exit|退出
+exact|yes|是
+exact|no|否
+exact|on|开
+exact|off|关
+exact|enabled|已启用
+exact|disabled|已停用
+exact|registered|已注册
+exact|not registered|未注册
+exact|Press Enter to return to the menu...|按回车返回菜单...
+sub|Settings saved to |设置已保存到 
+sub|Unknown choice: |无效的选择：
+
+# ---------------- install.bat ----------------
+exact|DSH Auto-Update - first-time setup|DSH 自动更新 - 首次安装
+exact|Step 1/5  Checking prerequisites|第 1/5 步  检查运行环境
+exact|Step 2/5  Preparing the DSH install folder|第 2/5 步  准备 DSH 安装目录
+exact|Step 3/5  Installing DSH|第 3/5 步  安装 DSH
+exact|Step 4/5  Verifying the install|第 4/5 步  校验安装
+exact|Step 5/5  Registering the scheduled tasks|第 5/5 步  注册计划任务
+exact|This folder will hold DSH and every plugin.|本文件夹将存放 DSH 与全部插件。
+exact|Node.js and npm are required.|需要先安装 Node.js 和 npm。
+exact|ERROR: node was not found in PATH.|错误：PATH 里找不到 node。
+exact|ERROR: npm was not found in PATH.|错误：PATH 里找不到 npm。
+exact|Install Node.js 20 or newer from https://nodejs.org and run install.bat again.|请先从 https://nodejs.org 安装 Node.js 20 或更新版本，然后重新运行 install.bat。
+exact|Already installed.|已经安装过了。
+exact|Done. Next: double-click run.bat to start DSH.|完成。下一步：双击 run.bat 启动 DSH。
+exact|The first start also checks for updates and can install them for you.|首次启动也会检查更新，并可以帮你安装。
+exact|This download is about 250 MB. Please wait.|下载大约 250 MB，请稍候。
+exact|Install failed. See the output above.|安装失败，请看上面的输出。
+exact|Verification failed: the installed DSH does not answer.|校验失败：装好的 DSH 没有响应。
+sub|Downloading and unpacking|正在下载并解压
+
+# ---------------- run / stop / restart ----------------
+sub|a DSH server is already listening on port |已经有一个 DSH 服务在监听端口 
+sub|open http://127.0.0.1:|在浏览器里打开 http://127.0.0.1:
+sub|in your browser when you need it|（需要时在浏览器中打开）
+sub|opening http://127.0.0.1:|正在打开 http://127.0.0.1:
+sub|starting DSH|正在启动 DSH
+sub|the pre-flight reported a problem|自检报告了问题
+sub|pre-flight skipped|已跳过自检
+sub|does not exist - starting without the pre-flight|不存在，跳过自检直接启动
+sub|stopping DSH on port |正在停止端口 
+sub|stopped.|已停止。
+sub|nothing is listening on port |端口上没有进程监听 
+sub|the DSH install is missing - run install.bat first|DSH 还没安装，请先运行 install.bat
+
+# ---------------- boot / preflight ----------------
+exact|preflight: DSH start-up check|启动前检查：DSH 开机自检
+exact|snapshot: nothing changed since the last one (or pnpm is busy)|快照：与上一次相比没有变化（或 pnpm 正忙）
+exact|update: nothing is behind - no question, no install|更新：没有待更新的内容，不询问也不安装
+exact|update: an update is available and nobody was asked (-PromptUpdate not given)|更新：有可用更新，但没有询问（未加 -PromptUpdate）
+exact|update: the user approved the update|更新：用户选择了更新
+exact|update: the user declined the update - starting the current version|更新：用户选择暂不更新，用当前版本启动
+exact|update: skipped for this run|更新：本次跳过
+exact|update: -AssumeYes, this update was already approved|更新：-AssumeYes，本次更新已获批准
+exact|update: could not check for updates - running the updater as before|更新：无法检查更新，按原方式运行更新器
+exact|update: DSH is up to date or was updated successfully|更新：DSH 已是最新，或已成功更新
+exact|update: an update was installed, failed verification and was rolled back|更新：装了新版但校验失败，已自动回滚
+exact|prompt: the user chose to update now|询问：用户选择现在更新
+exact|prompt: the user chose not to update now|询问：用户选择暂不更新
+exact|prompt: no answer from the dialog - treating it as no|询问：对话框没有响应，按"否"处理
+exact|verify: the plugin tree composes cleanly|校验：插件树可以正常组合
+exact|verify: the plugin tree does NOT compose|校验：插件树无法组合
+exact|every community plugin matches this DSH build|所有社区插件都与当前 DSH 兼容
+exact|boot: an update is available - asking the user|开机：有可用更新，正在询问用户
+exact|boot: nothing is behind - starting quietly|开机：没有待更新内容，静默启动
+exact|boot: logon launch requested|开机：收到登录启动请求
+exact|boot: something is already listening on that port - leaving it alone|开机：该端口已有服务在监听，不去打扰它
+sub|update: the user did not answer in time|更新：用户未在时限内选择
+sub|starting quietly|静默启动
+sub|asking the user|正在询问用户
+
+# ---------------- updater (dsh-update.ps1) ----------------
+sub|install dir : |安装目录：
+sub|npm : |npm：
+sub|dist-tag : |发布标签：
+sub|newest : |最新版本：
+sub|installed : |已安装：
+sub|npm version : |npm 版本：
+sub| : |：
+exact|CHECK: everything is up to date|检查：已是最新
+exact|CHECK: an update is available|检查：有可用更新
+exact|DSH is already up to date - nothing to install|DSH 已是最新，无需安装
+exact|verifying the new install (version + full plugin config)|正在校验新安装（版本 + 完整插件配置）
+exact|the plugin tree composes cleanly|插件树可以正常组合
+sub|holding |正在按住 
+sub| - it would refuse to load |——它会拒绝加载 
+sub| of the installed plugins|个已安装插件
+sub|would be skipped: |会被跳过：
+sub|staying on the current DSH so the plugins keep working|保持当前 DSH 版本，以免插件失效
+sub|update those plugins first, or force it with -IgnorePluginCompat|请先升级这些插件，或用 -IgnorePluginCompat 强制升级
+sub|updating DSH in place:|原地更新 DSH：
+sub|install backup:|安装备份：
+sub| to copy, |需要复制，
+sub| free|可用空间
+sub|install backup ready:|安装备份已就绪：
+sub| was |原版本 
+sub|waiting : |等待中：
+sub| is too new for the release-age gate|太新，未过发布时长门槛
+sub|pinned : |已锁定：
+sub|stays at |保持 
+sub| exists (use bump.bat)|已发布（用 bump.bat 升级）
+sub|plugins left alone (nothing is behind)|插件无需改动（没有待更新的）
+sub|a DSH server is listening on port |有 DSH 服务在监听端口 
+sub| - leaving the npx cache alone|，因此不动 npx 缓存
+sub|verification failed: |校验失败：
+sub|rolling the DSH install back to |正在把 DSH 回滚到 
+sub|rolled back; installed version is now |已回滚；当前安装版本为 
+sub|the install left no usable local copy|安装后没有留下可用的本地副本
+sub|DRYRUN would back up |试运行：将会备份 
+sub|then npm install|然后执行 npm install
+sub|targeting : |目标：
+sub|skipping |跳过 
+sub| - it already failed to install or verify on this machine|——它在这台机器上安装或校验失败过
+sub|next retry after |下次重试时间 
+sub|force it now with -IgnoreUpdateFailures|想立刻重试加 -IgnoreUpdateFailures
+sub|this version will not be retried before|此版本在此时间前不会重试：
+
+# ---------------- health / updates ----------------
+sub|profile |配置 
+sub|community plugin(s)|个社区插件
+sub|warning: |警告：
+sub|needs |需要 
+sub|, which is not installed|，但没有安装
+sub|(kept)|（保留）
+sub|note: |提示：
+sub|does not declare DSH |未声明支持 DSH 
+sub|but you granted an exact-version exemption - it loads anyway (risk accepted)|但你已授予精确版本豁免，仍会加载（已接受风险）
+sub|would still load on DSH |在 DSH 上仍可加载：
+sub|would not survive the upgrade to |无法在升级到以下版本后存活：
+sub|WOULD BE SKIPPED BY DSH |会被 DSH 跳过：
+sub|PLUGIN NOT SUPPORTED BY THIS DSH:|本 DSH 不支持该插件：
+sub|result:|结果：
+sub|unsupported plugin(s), |个不兼容插件，
+sub|removed|已删除
+sub|it declares support for DSH |它声明支持 DSH 
+sub|and this DSH is |而当前 DSH 是 
+sub|its @deepseek-ai/dsh-* peers accept |它的 @deepseek-ai/dsh-* peer 只接受 
+sub|so DSH |因此 DSH 
+sub|but this DSH ships|但当前 DSH 提供的是
+sub|its declared bundle patch |它声明的 bundle 补丁 
+sub|is missing|不存在
+sub|its web half injects |它的网页端需要注入 
+sub|which this DSH does not provide|而当前 DSH 没有提供
+sub|it has no dsh metadata any more|它已经没有任何 dsh 元数据
+
+# ---------------- backup / restore ----------------
+exact|Backing up|正在备份
+exact|Restoring|正在恢复
+exact|Done.|完成。
+exact|No backups found.|没有找到任何备份。
+exact|Type the number of the backup to restore, or press Enter to cancel:|输入要恢复的备份编号，直接回车取消：
+exact|Restore this backup? The current plugins will be replaced.|确定恢复这个备份？当前的插件会被替换。
+exact|A pre-restore backup was taken as well.|恢复前也自动做了一次快照。
+exact|The plugin packages could not be reinstalled automatically.|插件包没能自动重新安装。
+exact|Plugins only take effect after a restart.|插件要重启后才生效。
+sub|plugin snapshot|插件快照
+sub|snapshot|快照
+sub|plugins|插件
+sub|nothing changed since the last one|与上次相比没有变化
+sub|pnpm is busy|pnpm 正忙
+sub|kept |保留 
+
+# ---------------- bump ----------------
+exact|already up to date|已经是最新版
+exact|installing|正在安装
+sub|release-age exemption moved to:|发布时长豁免已改到：
+sub|installed:|已安装：
+sub|verified: plugin tree composes cleanly|校验通过：插件树可以正常组合
+sub|not found in the profile|在配置里找不到
+sub|no newer version|没有更新的版本
+sub|dry run|试运行
+sub|rolled back|已回滚
+
+# ---------------- popup (ask-update.vbs) ----------------
+exact|DSH update check|DSH 更新检查
+exact|An update is available for DSH.|DSH 有可用更新。
+exact|Yes - update now. A window opens showing the update, and the browser opens automatically when it is verified.|点「是」：现在更新。会打开一个窗口显示更新过程，验证通过后自动打开浏览器。
+exact|No - start the version that is installed now. You will be asked again next time.|点「否」：先用当前版本启动，下次启动还会再问。
+exact|Clicking nothing will be treated as No.|不选择则按「否」处理。
+
+# ---------------- tasks ----------------
+exact|Tasks registered.|计划任务已注册。
+exact|Tasks removed.|计划任务已删除。
+sub|boot task|开机任务
+sub|backup task|备份任务
+sub|is missing - cannot register the boot task|不存在，无法注册开机任务
+sub|could not set the logon delay|无法设置登录延迟
+
+# ---------------- misc sentences ----------------
+exact|nothing to do|没有需要处理的内容
+exact|done|完成
+exact|no changes|没有变化
+sub|is missing -|不存在，
+sub|does not exist|不存在
+sub|listening|正在监听
+sub|restart DSH yourself|请自己重启 DSH
+sub|the plugin tree composes cleanly|插件树可以正常组合
+
+exact|follow the system language|跟随系统语言
+exact|auto = follow the system language|auto = 跟随系统语言
