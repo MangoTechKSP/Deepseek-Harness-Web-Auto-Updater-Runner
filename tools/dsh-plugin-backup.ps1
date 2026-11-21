@@ -294,7 +294,7 @@ function Show-Snapshots {
     }
     $rows += [pscustomobject]@{ index = $index; name = $snap.Name; kind = $kind; plugins = $count; at = $when }
   }
-  $rows | Format-Table -AutoSize | Out-String -Width 200 | Write-Host
+  Write-Host ($rows | Format-Table -AutoSize | Out-String -Width 200)
   return $snaps
 }
 
@@ -397,14 +397,17 @@ function Invoke-Restore([string]$snapshotDir) {
     } else {
       Write-Host 'repairing dependencies with pnpm (best effort) ...'
       $ok = $false
-      foreach ($args in @(@('install', '--frozen-lockfile', '--offline'), @('install', '--frozen-lockfile'))) {
-        try {
-          & cmd /c ('pnpm ' + ($args -join ' ') + ' 2>&1') | ForEach-Object { Write-Host ('  ' + $_) }
-          if ($LASTEXITCODE -eq 0) { $ok = $true; break }
-        } catch {
-          Write-Host ('  pnpm attempt failed: ' + $_.Exception.Message)
+      Push-Location -LiteralPath $state.dir
+      try {
+        foreach ($args in @(@('install', '--frozen-lockfile', '--offline'), @('install', '--frozen-lockfile'), @('install', '--no-frozen-lockfile'))) {
+          try {
+            & cmd /c ('pnpm ' + ($args -join ' ') + ' 2>&1') | ForEach-Object { Write-Host ('  ' + $_) }
+            if ($LASTEXITCODE -eq 0) { $ok = $true; break }
+          } catch {
+            Write-Host ('  pnpm attempt failed: ' + $_.Exception.Message)
+          }
         }
-      }
+      } finally { Pop-Location }
       if ($ok) { Write-Host 'dependency repair finished.' } else { Write-Host 'dependency repair failed; packages were still copied back.' }
     }
   }
